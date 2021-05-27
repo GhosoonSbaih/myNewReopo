@@ -12,7 +12,7 @@ Feature: :Automationpractice Main Page
 
     
    Scenario: Clicks on the "Add to cart" button
-   Given The user visits automationpractice page 
+   Given The user visits the automation practice page 
    When  The user clicks on the "Add to Cart" button
    And   Popup should be opened 
    And   The user clicks on the "Proceed to checkout" 
