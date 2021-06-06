@@ -72,8 +72,7 @@
     },
     "cypress-cucumber-preprocessor": {
         "nonGlobalStepDefinitions": true,
-        "stepDefinitions": "cypress/integration",
-        "step_definitions": "cypress/integration/features/step_definitions/**/"
+        "stepDefinitions": "cypress/integration"
     },
     "husky": {
         "hooks": {

@@ -1,4 +1,4 @@
-    class homePageAssertions{
+    class HomePageAssertions{
 
     checkPopupModelIsOpen(){
         return cy.get('.layer_cart_product > h2').should('contain','Product successfully added to your shopping cart');
@@ -11,4 +11,4 @@ checkShoppingCartSummeryIsOpen(){
 
 }
 
-export default homePageAssertions;
+export default HomePageAssertions

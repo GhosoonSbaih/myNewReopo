@@ -14,6 +14,8 @@ Feature: :Automationpractice Main Page
    Scenario: Clicks on the 'Add to cart' button
    Given The user visits the automationPractice page 
    When The user clicks on the 'Add to Cart' button
-   And The Popup should be opened 
    And The user clicks on the 'Proceed to checkout' button
    Then The user should see a new page with 'Your shopping cart' title
+   And The table should have product equal <productvalue>
+   |Product  | Description                   |Avail.     |Unit price  |Qty        |Total     |   
+   |'image'  | 'Faded Short Sleeve T-shirts' |'In stock' | $16.51     | '+' & '-' |'$16.51'  |

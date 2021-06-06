@@ -1,12 +1,13 @@
 import { Given, Then, When } from "cypress-cucumber-preprocessor/steps"
-import homePageActions from 'cypress/pageObject/homePage/actions'
-import homePageAssertions from 'cypress/pageObject/homePage/assertions'
-
+import HomePageActions from "@pageObjects/homePage/actions";
+import HomePageAssertions from "@pageObjects/homePage/assertions";
+import ShoppingCartAssertions from "@pageObjects/shoppingCartSummaryPage/assertions"
 
 
 const url = 'http://automationpractice.com/index.php'
-const homePage= new homePageActions()
-const homePageAss= new homePageAssertions()
+const actionPage= new HomePageActions();
+const assertionPage= new HomePageAssertions();
+const shoppingAssertion = new ShoppingCartAssertions();
 
 
 
@@ -16,17 +17,16 @@ Given("The user visits automationPractice page", () => {
 
 When('The user hover over the \'Faded Short Sleeve T-shirts\' item', ()=>
 {
-  homePage.hoverOverMenuItem()
+  actionPage.hoverOverMenuItem()
   
 })
 
 When ('The user clicks on the \'Add to Cart\' button',()=>{
-  homePage.clickAddToChartButton()
+  actionPage.clickAddToChartButton()
 })
 
 Then('The user should see a popup opened with \'Product successfully added to your shopping cart\' title',()=>{
-  homePageAss.checkPopupModelIsOpen()
-  
+  assertionPage.checkPopupModelIsOpen()
 })
 
 
@@ -40,17 +40,18 @@ When ('The user clicks on the \'Add to Cart\' button',()=>{
   
 })
 
-When('The Popup should be opened',()=>{
-  
-  
-})
+
 
 When('The user clicks on the \'Proceed to checkout\' button',()=>{
-  homePage.clickProceedCheckButton()
+  actionPage.clickProceedCheckButton()
   
 })
 Then('The user should see a new page with \'Your shopping cart\' title',()=>{
-  homePageAss.checkShoppingCartSummeryIsOpen()
+  assertionPage.checkShoppingCartSummeryIsOpen()
+  
+})
+Then('The table should have product equal <productvalue>',()=>{
+  shoppingAssertion.getShoppingCartColumnContent()
   
 })
 

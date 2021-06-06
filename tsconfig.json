@@ -15,6 +15,7 @@
             "@support/*": ["cypress/support/*"],
             "@plugins/*": ["cypress/plugins/*"],
         } ,
+        
         "types": [
             "node",
             "cypress",
